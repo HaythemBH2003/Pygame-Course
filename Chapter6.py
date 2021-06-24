@@ -5,7 +5,7 @@ import os
 import pygame
 pygame.init()
 FPS = 30
-W, H = 400, 300
+W, H = 400, 400
 WINDOW = pygame.display.set_mode((W, H))
 pygame.display.set_caption("PLAY SOUND")
 FONT = pygame.font.SysFont(
@@ -36,8 +36,13 @@ def draw():
     TEXT = FONT.render(
         "TAP TO PLAY SOUND", True,WHITE)
     RECT = TEXT.get_rect()
-    RECT.centerx, RECT.centery = W // 2, H // 2
+    RECT.centerx, RECT.centery = W // 2, H // 2 - 50
     WINDOW.blit(TEXT, RECT)
+    TEXT2 = FONT.render(
+        "PRESS r TO PAUSE", True, WHITE)
+    RECT2 = TEXT2.get_rect()
+    RECT2.centerx, RECT2.centery = W // 2, H // 2 + 50
+    WINDOW.blit(TEXT2, RECT2)
     pygame.display.update() 
 
 ##              MAINLOOP              ##
